@@ -1,0 +1,27 @@
+{% extends "movies/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+   
+<div class="movie-detail">
+    <h2>{{ movie.title }}</h2>
+    <img src="{{ movie.image_url }}" alt="{{ movie.title }}" class="movie-image" data-movie-id="{{ movie.id }}" style="width: 200px;" height="mr-auto">
+    <p>{{ movie.description }}</p>
+    <p>Asientos disponibles: {{ movie.cinemahall.available_seats }}</p>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label for="seats">Número de boletos:</label>
+        <input type="number" id="seats" name="seats" min="1" max="{{ movie.cinemahall.available_seats }}">
+        <input type="submit" value="Comprar boletos">
+    </form>
+</div>
+    
+{% endblock %}
+{% block script %}
+    <script src="{% static 'movies/movie.js' %}"></script>
+{% endblock %}

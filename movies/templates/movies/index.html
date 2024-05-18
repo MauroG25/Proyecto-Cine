@@ -1,0 +1,30 @@
+{% extends "movies/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div>
+    <h2>Mejor Valoradas</h2>
+<div id="bestongoing-view" class="slider">
+    
+    
+    
+</div>
+</div>
+   
+<div>
+    <h2>En cartelera</h2>
+    <div id="ongoing-view"></div>
+</div>
+    
+<div>
+    <h2>Próximos estrenos</h2>
+    <div id="upcoming-view"> </div>
+
+</div>
+    
+ 
+{% endblock %}
+{% block script %}
+    <script src="{% static 'movies/movie.js' %}"></script>
+    <script src="{% static 'movies/index.js' %}"></script>
+{% endblock %}

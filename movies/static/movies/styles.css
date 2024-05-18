@@ -1,0 +1,130 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #4CAF50; /* Color del trébol */
+}
+
+
+#ongoing-cartelera-view, #ongoing-view, #upcoming-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#ongoing-cartelera-view div, #ongoing-view div, #upcoming-view div {
+    background-color: #333;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px; /* Ajusta esto según el tamaño que desees para las tarjetas de las películas */
+}
+
+#ongoing-cartelera-view img, #ongoing-view img, #upcoming-view img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #4CAF50; /* Color del trébol */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#upcoming-cartelera-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#upcoming-cartelera-view div {
+    background-color: #333;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px; /* Ajusta esto según el tamaño que desees para las tarjetas de las películas */
+}
+
+#upcoming-cartelera-view img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    position: relative;
+}
+
+.slider div {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    margin-right: 50px;
+    border-radius: 10px;
+    background: #333;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    animation: slider 15s infinite alternate ease-in-out;
+}
+
+.slider div h4 {
+    margin-bottom: 10px;
+}
+
+.slider div img {
+    width: 700px;
+    height: 550px;
+}
+
+@keyframes slider {
+    0% { transform: translateX(0%);}
+    19% { transform: translateX(0%);}
+    20% { transform: translateX(-100%);}
+    39% { transform: translateX(-100%);}
+    40% { transform: translateX(-200%);}
+    59% { transform: translateX(-200%);}
+    60% { transform: translateX(-300%);}
+    79% { transform: translateX(-300%);}
+    80% { transform: translateX(-400%);}
+    99% { transform: translateX(-400%);}
+    100%{ transform: translateX(0%);}
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
